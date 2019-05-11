@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 프레젠테이셔널 컴포넌트와 컨테이너 컴포넌트  
 
-## Available Scripts
+리덕스를 사용하는 프로젝트에서 주로 사용하는 structure
 
-In the project directory, you can run:
 
-### `npm start`
+## 프레젠테이셔널 component
+- only View  
+- 리덕스 스토어에 직접 접근할 권한 없음  
+- DOM el 과 style이 있으며, 프레젠테이셔널 컴포넌트와 컨테이너 컴포넌트가 있을 수도 있습니다.
+- only props, liite state ( has state 일땐 데이터가 아닌 UI와 관련됨 )
+  
+주로 함수형 컴포넌트 작성  
+state가 있어야 하거나 최적화를 하려고  
+라이프사이클 메서드가 필요할때 마다 class 작성
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 컨테이너 component
 
-### `npm run build`
+- 프레젠테이셔널 컴포넌트와 컨테이너 컴포넌트 들의 관리를 담당.
+- 내부에 DOM 엘리먼트를 직접적으로 사용 불가
+- 감싸는 용도일 때만 사용
+- 스타일 없음
+- 스타일은 모두 프리젠테이셔널 컴포넌트에서 정의해야 함!
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+state를 가질때가 많다  
+리덕스에 직접 접근 가능 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 컴포넌트를 프레젠테이셔널 컴포넌트와 컨테이너 컴포넌트로 나누면 장점
+- 유저 인터페이스와 상태를 다루는 데이터가 분리
+- 컴포넌트 재사용률 증가!
 
-### `npm run eject`
+### 오해
+컨테이너에 따른 컴포넌트의 구분에 제약을 갇지 말라!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# redux-til
